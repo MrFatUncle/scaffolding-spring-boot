@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>scaffolding-spring-boot</artifactId>
+        <groupId>com.lcm</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring-boot-starters</artifactId>
+    <name>脚手架 Spring Boot Starters</name>
+    <description>脚手架 Spring Boot Starter</description>
+
+    <properties>
+        <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
+    </properties>
+
+    <modules>
+        <module>demo-spring-boot-starters</module>
+    </modules>
+
+    <dependencies>
+        <!-- 用于自动配置 @EnableAutoConfiguration -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <!-- 获取配置文件用
+        @EnableConfigurationProperties()
+        @ConfigurationProperties() -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring.boot.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lcm</groupId>
+    <artifactId>scaffolding-spring-boot</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <modules>
+        <module>demo-core</module>
+        <module>spring-boot-starters</module>
+    </modules>
+
+    <developers>
+        <developer>
+            <name>Chengming Liao</name>
+            <email>122789454@qq.com</email>
+            <url>https://github.com/MrFatUncle</url>
+        </developer>
+    </developers>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <lombok.version>1.18.8</lombok.version>
+    </properties>
+
+    <!--
+    dependencyManagement 与 dependency
+        子模块中：
+            dependencyManagement引入声明，如果不引入dependency，则不会将依赖引入到子模块中；
+            dependency是子模块会继承父模块的依赖，无论如何子模块都依赖了父模块的dependency；
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <!-- provided 此依赖的jar不会随打包进入项目jar包中，作用在编译 -->
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
